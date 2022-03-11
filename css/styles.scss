@@ -1,0 +1,119 @@
+$lt-gray: #ddd;
+$txt-color: white;
+$background-dark: #163858;
+$background-light: #2d2f2f;
+$background-pale1: #3498db;
+$background-pale2: #85C1E9;
+$background-body: #79ffe4d7;
+
+// Height variables
+$carousel-item-height: 300px;
+
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
+}
+
+@mixin carousel-margin($pad-top, $pad-right, $pad-bottom, $pad-left) {
+    margin:10px auto;
+    padding: $pad-top $pad-right $pad-bottom $pad-left;    
+}
+
+.foodpoint-body {
+    background-color: $background-body;
+}
+
+.row-header{
+    @include zero-margin(0px,0px);
+}
+
+.row-content {
+    @include zero-margin(50px,0px);
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+.footer{
+    background-color: $background-pale2;
+    @include zero-margin(20px, 0px);
+}
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background: $background-pale1 ;
+    color:floralwhite;
+    img {
+        filter: drop-shadow(0px 0px 0px #A3E4D7);
+    }
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-dark {
+    background: #E74C3C;
+    img {
+        filter: drop-shadow(0px 0px 0px #A3E4D7);
+    }
+}
+
+.tab-content {
+    border-left: 1px solid $lt-gray;
+    border-right: 1px solid $lt-gray;
+    border-bottom: 1px solid $lt-gray;
+    padding: 10px;
+}
+
+.carousel {
+    background: $background-dark;
+
+    .carousel-item {
+        height: $carousel-item-height;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: $carousel-item-height;
+        }
+        .carousel-caption {
+            @include carousel-margin(20px, 10px, 50px, 230px);
+            font-size: 100%;
+            
+        }
+    }
+}
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.modal-content {
+	border: 0px;
+
+	.modal-body {
+		background: $background-light;
+	}
+
+	.modal-header {
+		background: $background-dark;
+		color: floralwhite;
+		border: 0px;
+
+		.close {
+			color: floralwhite;
+		}
+
+	}
+
+}
